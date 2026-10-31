@@ -597,11 +597,12 @@ ngrok http 7860</code></pre>
             <div class="step-body">
                 <div class="step-title">Launch Backend Server & Interactive Dashboard</div>
                 <div class="step-desc">Open two terminal tabs on your laptop to run both the API and the UI:</div>
-                <pre><code># Terminal 1: Run FastAPI Webhook Receiver Agent
-python -m uvicorn server.app:app --host 0.0.0.0 --port 7860 --reload
+                <pre><code># Option A: 1-Command All-in-One Runner (Recommended):
+python run_local.py
 
-# Terminal 2: Run Streamlit Analytics Dashboard
-python -m streamlit run dashboard.py --server.port 8501</code></pre>
+# Option B: Run in 2 separate terminals:
+# Terminal 1: python -m uvicorn server.app:app --host 0.0.0.0 --port 7860 --reload
+# Terminal 2: python -m streamlit run dashboard.py --server.port 8501</code></pre>
                 <div class="step-desc" style="margin-top: 0.5rem;">
                     Your dashboard is now live at <code>http://localhost:8501</code> and ready to receive and heal CI failures in real-time!
                 </div>
